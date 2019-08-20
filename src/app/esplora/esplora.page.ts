@@ -15,7 +15,7 @@ export class EsploraPage implements OnInit {
   isLoadingRecipe = false;
   currentIngredients: string[];
   currentRecipes: Recipe[];
-  //commento a caso
+  //ci metto il mio
   
   constructor(private router: Router, private dataService: DataService) {
   }
