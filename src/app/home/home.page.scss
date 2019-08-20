@@ -1,1 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
+@keyframes enlargeWidth {
+  from {width: 90%; height: 6%;}
+
+  to {width: 92%; height: 6.5%;}
+}
+
+@keyframes reduceWidth {
+  from {width: 92%; height: 6.5%;}
+
+  to {width: 90%; height: 6%;}
+}
+
+header{
+  background: var(--bg-color) !important;
+}
+
+div.content-header-wrapper{
+  background-color: var(--ion-color-primary);
+  border-bottom-left-radius: 35px;
+  height: 8vh;
+  text-align: center;
+  position: relative;
+}
+
+div.content-header-wrapper div.content-logo-wrapper{
+
+  position: absolute;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 100%;
+  text-align: center;
+}
+
+div.content-header-wrapper div.content-logo-wrapper img{
+
+  height: 35px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ion-content{
+  --background: var(--bg-color);
+}
+
+#spinner{
+  text-align: center;
+}
+
+div.grid-wrapper{
+
+  padding-top: 17%;
+}
+div.grid-wrapper ion-grid{
+
+  padding-top: 0;
+}
+
+p.row-type-content{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.30rem;
+  color: var(--ion-color-primary);
+  margin: 0;
+}
+
+//DA QUI NON TOCCARE NULLA
+.horDiv{
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-top: 2vh;
+  padding: 2vh 0 2vh 0;
+  margin-bottom: 4vh;
+}
+
+div.card{
+
+  margin-left: 4vh;
+  height: 200px;
+  width: 180px;
+  display: inline-block;
+  background-color: white;
+  opacity: 0.85;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.41);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.41);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.41);
+}
+
+
+div.card ion-img{
+
+  //immagini in 4:3 (la width è 200px data dal contenitore)
+  display: block;
+  height: 120px;
+  width: 180px;
+  margin: 0;
+  overflow: hidden;
+  padding-right: 0;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  //--border-radius: 5px;
+}
+
+div.card .card-description{
+  height: 80px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  white-space: normal;
+  position: relative;
+}
+
+div.card .card-description p{
+
+  //QUI NON TOCCARE ASSOLUTAMENTE NULLA!
+  height: 50%;
+  width: 90%;
+  margin: 0;
+  font-size: 0.7em;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: normal;
+  max-width: 180px;
+  color: var(--ion-color-primary);
+  display: block;
+  white-space: normal;
+  text-align: center;
+  overflow: hidden;
+}
+
+//DA QUI POSSIAMO RITOCCARE

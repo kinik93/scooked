@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+header{
+  background: rgba(0,0,0,0) !important;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+}
+
+div.content-header-wrapper{
+  background-color: var(--ion-color-primary);
+  border-bottom-left-radius: 35px;
+  height: 8vh;
+  position: relative;
+}
+
+div.content-header-wrapper div.content-logo-wrapper{
+  position: absolute;
+  bottom: 0;
+
+  align-items: center;
+  width: 100%;
+  //text-align: center;
+  //vertical-align: middle;
+}
+
+div.content-header-wrapper div.content-logo-wrapper img.logo{
+
+  margin: 0 auto;
+  height: 35px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+  position: relative;
+  bottom: 0;
+}
+
+div.content-header-wrapper div.content-logo-wrapper div.back-icon{
+  height: 35px;
+  vertical-align: middle;
+  padding-top: 13px;
+  padding-left: 4vh;
+  position: absolute;
+  display: table-cell;
+}
+div.content-header-wrapper div.content-logo-wrapper div.back-icon img{
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+}
+
+
+
+ion-content{
+  --background: var(--bg-color);
+}
+
+div.recipe-photo-wrapper{
+  height: 300px;
+  background-size: cover;
+}
+
+div.recipe-photo-gradient{
+  height: 300px;
+  background: rgba(238,238,238,0);
+  position: relative;
+  background: rgba(118,41,41,0.2);
+background: -moz-linear-gradient(top, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(237,237,237,0.42) 60%, rgba(237,237,237,1) 86%, rgba(237,237,237,1) 87%);
+background: -webkit-gradient(left top, left bottom, color-stop(12%, rgba(118,41,41,0.2)), color-stop(20%, rgba(138,74,74,0.2)), color-stop(41%, rgba(190,159,159,0)), color-stop(60%, rgba(237,237,237,0.42)), color-stop(86%, rgba(237,237,237,1)), color-stop(87%, rgba(237,237,237,1)));
+background: -webkit-linear-gradient(top, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(237,237,237,0.42) 60%, rgba(237,237,237,1) 86%, rgba(237,237,237,1) 87%);
+background: -o-linear-gradient(top, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(237,237,237,0.42) 60%, rgba(237,237,237,1) 86%, rgba(237,237,237,1) 87%);
+background: -ms-linear-gradient(top, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(237,237,237,0.42) 60%, rgba(237,237,237,1) 86%, rgba(237,237,237,1) 87%);
+background: linear-gradient(to bottom, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(237,237,237,0.42) 60%, rgba(237,237,237,1) 86%, rgba(237,237,237,1) 87%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#762929', endColorstr='#ededed', GradientType=0 );
+
+}
+div.recipe-photo-gradient h2{
+  font-family: 'Josefin Sans', sans-serif;
+  //font-size: 1.40rem;
+  color: var(--ion-color-primary);
+  display: block;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 70%;
+}
+
+div.recipe-content-wrapper p.description{
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.2rem;
+  color: black;
+  opacity: 0.7;
+  display: block;
+  margin: auto;
+  max-width: 85%;
+  padding-top: 5%;
+}
+div.recipe-content-wrapper div.recipe-istruction-wrapper{
+
+  margin-top: 10%;
+}
+div.recipe-content-wrapper div.recipe-istruction-wrapper #prep{
+  color: var(--ion-color-primary);
+}
+
+//Questi non li prende perchè html è iniettato?
+div.inner-recipe-html p{
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  color: black;
+  opacity: 0.7;
+  display: block;
+  max-width: 80%;
+  line-height: 2rem;
+}
+span.num-step{
+  color: var(--ion-color-primary);
+}

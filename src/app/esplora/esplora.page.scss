@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+
+// Cerchiamo di tenere il CSS in senso gerarchico dall'alto al basso almeno si smania meno
+// (sempre cercato di farlo, pensavo di essere l'unico grullo e invece..)
+
+header{
+  background: var(--bg-color) !important;
+}
+
+div.content-header-wrapper{
+  background-color: var(--ion-color-primary);
+  border-bottom-left-radius: 35px;
+  height: 8vh;
+  text-align: center;
+  position: relative;
+}
+
+div.content-header-wrapper div.content-logo-wrapper{
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+div.content-header-wrapper div.content-logo-wrapper img{
+
+  height: 35px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+div.content-wrapper{
+  position: relative;
+  height: 100%;
+}
+
+
+div.content-wrapper img.writing{
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 3%;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+}
+
+div.content-wrapper div.slogan-bar-wrapper{
+
+  text-align: center;
+  padding-top: 17%;
+}
+
+div.slogan-bar-wrapper p{
+
+  margin: 0px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.30rem;
+  color: var(--ion-color-primary);
+  //margin-bottom: 8%;
+
+}
+
+div.searchBarDiv{
+
+  margin: auto;
+  border-bottom-style: solid;
+  border-width: thin;
+  width: 60%;
+  margin-top: 5vh;
+  vertical-align: middle;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.searchBarDiv p{
+  position: absolute;
+  bottom: 5px;
+  font-size: 1.0rem;
+  opacity: 0.7;
+  line-height: 0.8em;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: left;
+  padding-left: 10px;
+  display: block;
+  margin: 0px;
+
+}
+
+.searchBarDiv img{
+  //position: absolute
+  width: 15px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  right: 5px;
+  bottom: 4px;
+  float: right;
+}
+
+
+ion-content{
+  --background: var(--bg-color);
+}
+
+ion-grid{
+  margin-top: 8vh;
+  padding-top: 0px;
+}
+
+ion-row.first_block{
+  margin-bottom: 1vh;
+  margin-top: 3vh;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.2rem;
+  //opacity: 0.7;
+}
+
+ion-row.row-proposed{
+  margin-top: 2vh;
+}
+ion-list{
+  padding: 2vh;
+  background: var(--bg-color) !important;
+}
+
+ion-chip{
+  --background: none;
+}
+
+
+ion-list p{
+
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 13px;
+  //color: rgb(82, 42, 58);
+  text-transform: uppercase;
+}
+
+ion-label{
+
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 13px;
+  color: var(--ion-color-primary);
+}
+
+ion-label.black{
+
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 13px;
+  color: black;
+  opacity: 0.7;
+}
+
+
+div.recipeItem {
+  background: var(--bg-color);
+  height: 30vw;
+  margin-bottom: 4vh;
+  background-color: white;
+  opacity: 0.85;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.41);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.41);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.41);
+}
+
+div.recipeItem ion-img{
+  width: 45vw;
+  height: 30vw;
+  display: block;
+  float: left;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  overflow: hidden;
+}
+
+div.recipeItem div.onRightOfImage{
+  float: right;
+  display: inline-block;
+  width: 35vw;
+  height: 30vw;
+  position: relative;
+}
+
+div.recipeItem div.onRightOfImage p{
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--ion-color-primary);
+  font-size: 1rem;
+  display: block;
+  height: 20vw;
+  padding-top: 4vw;
+  padding: 6vw 2vw 2vw 2vw;
+  text-align: center;
+  text-transform: none;
+  margin: 0;
+}
+div.recipeItem div.onRightOfImage ion-button{
+  position: absolute;
+  right: -1.5vw;
+  bottom: 0vw;
+  padding: 0;
+  display: block;
+}
+
+ion-button .button-native{
+  padding: 0px !important;
+}
+.sc-ion-input-ios-h{
+  --padding-top: 2px;
+  --padding-bottom: 2px;
+}
+
+.sc-ion-input-md-h{
+  --padding-top: 2px;
+  --padding-bottom: 2px;
+}

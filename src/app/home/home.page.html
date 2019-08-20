@@ -1,14 +1,45 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<header>
+  <div class="content-header-wrapper">
+    <div class="content-logo-wrapper">
+      <!---<img src="assets/fried.svg" />--->
+      <img src="assets/logo3.png"/>
+    </div>
+  </div>
+</header>
+
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <div id="spinner" *ngIf="isLoading">
+    <ion-spinner name="crescent" color = "secondary"></ion-spinner>
+  </div>
+  <div class="grid-wrapper">
+    <ion-grid *ngIf="!isLoading">
+      <ion-row margin-horizontal text-wrap>
+        <p class="row-type-content">L'ingrediente del giorno: {{rndIng1.charAt(0).toUpperCase() + rndIng1.slice(1)}}</p>
+      </ion-row>
+      <div class="horDiv">
+        <div class="card" (click)='onRecipeClick(rnd_rec)' *ngFor="let rnd_rec of randomRecipes">
+            <ion-img [src]="rnd_rec.imageUrl"></ion-img>
+            <div class="card-description">
+                <p>
+                   {{rnd_rec.title | uppercase}}
+                </p>
+            </div>
+          </div>
+      </div>
+      <ion-row margin-horizontal>
+            <p class="row-type-content">I nostri consigli </p>
+      </ion-row>
+    <div class="horDiv">
+      <div class="card" (click)='onRecipeClick(sugg)' *ngFor="let sugg of suggestedRecipes">
+        <ion-img [src]="sugg.imageUrl"></ion-img>
+        <div class="card-description">
+            <p>
+              {{sugg.title | uppercase}}
+            </p>
+        </div>
+      </div>
+    </div>
+    </ion-grid>
   </div>
 </ion-content>

@@ -1,0 +1,31 @@
+<header>
+  <div class="content-header-wrapper">
+    <div class="content-logo-wrapper">
+      <div class=back-icon (click)="goBack()">
+        <img src="assets/back.png"/>
+      </div>
+      <!---<img src="assets/fried.svg" />--->
+      <img class="logo" src="assets/logo3.png"/>
+    </div>
+  </div>
+</header>
+<ion-content>
+  <div class="recipe-photo-wrapper" [ngStyle]="{'background-image': 'url('+selectedRecipe.imageUrl+')'}">
+    <div class="recipe-photo-gradient">
+      <h2>{{selectedRecipe.title.charAt(0).toUpperCase() + selectedRecipe.title.slice(1)}}</h2>
+    </div>
+  </div>
+  <div class="recipe-content-wrapper">
+      <p class="description">
+          {{selectedRecipe.recipeDescription}}
+      </p>
+      <div class="recipe-istruction-wrapper">
+        <p class="description" id="prep">
+            Preparazione
+        </p>
+        <div id="inner-recipe-html" padding [innerHTML] = "selectedRecipe.recipeHTML">
+        </div>
+      </div>
+  </div>
+
+</ion-content>

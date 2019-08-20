@@ -1,0 +1,57 @@
+
+
+<header>
+  <div class="content-header-wrapper">
+    <div class="content-logo-wrapper">
+      <!---<img src="assets/fried.svg" />--->
+      <img src="assets/logo3.png"/>
+    </div>
+  </div>
+</header>
+
+<ion-content>
+  <div class="content">
+    <div class="content-wrapper">
+      <img src="assets/writing.png" (click)="goToNote()" class="writing" />
+      <div class="slogan-bar-wrapper">
+        <p> Con cosa vuoi cucinare oggi? </p>
+      </div>
+      <div class="searchBarDiv" (click) = "onSearchFocus()">
+        <p>Aggiungi un ingrediente</p>
+        <img src="assets/plus-symbol.png"/>
+      </div>
+      <ion-grid padding>
+        <ion-row *ngIf="currentIngredients.length > 0" class="first_block">
+          I tuoi ingredienti
+        </ion-row>
+        <ion-row *ngIf="currentIngredients.length > 0">
+          <ion-col size="6" *ngFor="let ing of currentIngredients">
+            <ion-chip outline="true" padding>
+              <ion-label class="black">{{ ing }}</ion-label>
+              <ion-icon color="primary" name="close-circle" (click)="removeCurrentIngredient(ing)"></ion-icon>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="currentIngredients.length > 0" class="first_block">
+            Ricette proposte
+        </ion-row>
+        <div *ngIf="currentIngredients.length > 0 && isLoadingRecipe" paddin-top text-center>
+          <ion-spinner name="crescent" color = "primary"></ion-spinner>
+        </div>
+        <ion-row class="row-proposed">
+          <ion-list *ngIf="currentIngredients.length > 0 && isLoadingRecipe == false">
+            <div class="recipeItem" *ngFor="let rec of currentRecipes" (click) = "onRecipeClick(rec)" id="content">
+              <ion-img [src]="rec.imageUrl"></ion-img>
+              <div class="onRightOfImage">
+                <p text-wrap>{{ rec.title.charAt(0).toUpperCase() + rec.title.slice(1)}}</p>
+                <ion-button (click)="onHeartClick(rec)" style="--background: transparent; --box-shadow: 0px;">
+                  <ion-icon slot="icon-only" color="primary" name="heart-empty"></ion-icon>
+                </ion-button>
+              </div>
+            </div>
+          </ion-list>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
