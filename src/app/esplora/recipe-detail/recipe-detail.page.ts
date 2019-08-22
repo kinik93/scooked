@@ -17,6 +17,7 @@ export class RecipeDetailPage implements OnInit {
 
   ngOnInit() {
     //console.log(this.dataService.detailRecipe.recipeHTML)
+    //TODO: lazy loading image
     this.selectedRecipe = this.dataService.detailRecipe;
   }
 
