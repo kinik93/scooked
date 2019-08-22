@@ -107,16 +107,16 @@ div.recipe-content-wrapper div.recipe-istruction-wrapper #prep{
 }
 
 //Questi non li prende perchè html è iniettato?
-div.inner-recipe-html p{
+div.recipe-istruction-wrapper div.inner-recipe-html p{
   text-align: center;
   font-family: 'Lato', sans-serif;
   font-size: 0.8rem;
-  color: black;
+  color: blue !important;
   opacity: 0.7;
   display: block;
   max-width: 80%;
   line-height: 2rem;
 }
-span.num-step{
+div.recipe-istruction-wrapper div.inner-recipe-html p span.num-step{
   color: var(--ion-color-primary);
 }

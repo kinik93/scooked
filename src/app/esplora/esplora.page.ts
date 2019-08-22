@@ -16,7 +16,7 @@ export class EsploraPage implements OnInit {
   currentIngredients: string[];
   currentRecipes: Recipe[];
   //ci metto il mio
-  
+
   constructor(private router: Router, private dataService: DataService) {
   }
 
@@ -46,10 +46,18 @@ export class EsploraPage implements OnInit {
 
   onRecipeClick(selectedRecipe: Recipe){
     this.dataService.getRecipeDescription(selectedRecipe).subscribe(detailRecipe => {
+
+      //Vedere di risolvere problema caricamento
+      let s = detailRecipe.recipeHTML.replace(/<img /g, '<img id="lazy" ');
+      //console.log(s);
+      detailRecipe.recipeHTML = s;
+      //console.log(detailRecipe.recipeHTML);
       this.dataService.detailRecipe = detailRecipe;
+
       this.dataService.previousPath = ['tabs/esplora/'];
       this.router.navigate(['tabs/esplora/recipe-detail']);
     });
+
   }
 
   removeCurrentIngredient(ing: string) {
