@@ -9,7 +9,7 @@ import { DataService } from 'src/app/data.service';
 })
 export class SearchingPage implements OnInit {
 
-  @ViewChild('input', {static: false}) searchInput: {setFocus: () => void; };
+  @ViewChild('input') searchInput: {setFocus: () => void; };
   ingredients: string[];
   filteredIngredients: string[] = [];
   isLoadIng = false;

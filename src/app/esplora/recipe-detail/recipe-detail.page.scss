@@ -87,6 +87,15 @@ div.recipe-photo-gradient h2{
   width: 70%;
 }
 
+div.recipe-photo-gradient ion-button{
+
+  display: block;
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+}
+
+
 div.recipe-content-wrapper p.description{
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;

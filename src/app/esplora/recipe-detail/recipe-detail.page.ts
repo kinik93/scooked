@@ -24,4 +24,7 @@ export class RecipeDetailPage implements OnInit {
     console.log("click");
     this.router.navigate(this.dataService.previousPath);
   }
+  onHeartClick(){
+    this.dataService.storeOnLocalStorage(this.selectedRecipe.recipeLink);
+  }
 }
