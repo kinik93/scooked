@@ -32,18 +32,40 @@ export class DataService {
     });
   }
 
-  public storeOnLocalStorage(taskTitle: string): void {
+  public storeOnLocalStorage(recipe): void {
 
           // get array of tasks from local storage
           const currentTodoList = this.storage.get(STORAGE_KEY) || [];
           // push new task to array
-          currentTodoList.push({
-              title: taskTitle,
-              isChecked: false
-          });
+          //const currentTodoList = []
+          currentTodoList.push(recipe);
           // insert updated array to local storage
           this.storage.set(STORAGE_KEY, currentTodoList);
           console.log(this.storage.get(STORAGE_KEY) || 'LocaL storage is empty');
+  }
+
+  public removeFromLocalStorage(recipe){
+
+    var recLink = recipe.recipeLink;
+    const currentList = this.storage.get(STORAGE_KEY) || [];
+    var count = 0;
+    var found = false;
+    var index = 0;
+    while (!found && count<currentList.length){
+      if (currentList[count].recipeLink == recLink){
+        index = count;
+        found = true;
+      }
+      count++;
+    }
+    currentList.splice(index, 1);
+    this.storage.set(STORAGE_KEY, currentList);
+  }
+
+  public getFavFromStorage(){
+    // get array of tasks from local storage
+    const currentList = this.storage.get(STORAGE_KEY) || [];
+    return currentList;
   }
 
   fetchIngredients() {

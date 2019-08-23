@@ -33,6 +33,15 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'favourite',
+        children: [
+          {
+            path: '',
+            loadChildren: '../favourite/favourite.module#FavouritePageModule'
+          }
+        ]
+      },
     ]
   },
   {

@@ -14,7 +14,8 @@
     <div class="recipe-photo-gradient">
       <h2>{{selectedRecipe.title.charAt(0).toUpperCase() + selectedRecipe.title.slice(1)}}</h2>
       <ion-button (click)="onHeartClick()" style="--background: transparent; --box-shadow: 0px;">
-        <ion-icon slot="icon-only" color="primary" name="heart-empty"></ion-icon>
+        <ion-icon *ngIf="isFavourite" slot="icon-only" color="primary" name="heart"></ion-icon>
+        <ion-icon *ngIf="!isFavourite" slot="icon-only" color="primary" name="heart-empty"></ion-icon>
       </ion-button>
     </div>
   </div>
