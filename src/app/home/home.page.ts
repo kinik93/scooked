@@ -19,12 +19,12 @@ export class HomePage implements OnInit {
 
   constructor(private router: Router, private dataService: DataService) {}
 
-  ngOnInit() {
+  fetchRecipes() {
     this.isLoading = true;
 
-    //L'errore è qui perchè ingredientList è vuoto
-    //this.rndIng1 = this.dataService.ingredientList[Math.floor(Math.random() * this.dataService.ingredientList.length)];
-    this.rndIng1 = 'spaghetti';
+    //TODO?: L'errore è qui perchè ingredientList è vuoto (se si fa reload da questa pagina)
+    this.rndIng1 = this.dataService.ingredientList[Math.floor(Math.random() * this.dataService.ingredientList.length)];
+    //this.rndIng1 = 'spaghetti';
 
     this.dataService.fetchRandomRecipes(this.rndIng1).subscribe(rand_recipes => {
       this.randomRecipes = rand_recipes;
@@ -33,6 +33,10 @@ export class HomePage implements OnInit {
       this.suggestedRecipes = suggested_recipes;
     });
     this.isLoading = false;
+  }
+
+  ngOnInit() {
+    this.fetchRecipes();
   }
 
   ionViewWillEnter() {
@@ -48,6 +52,21 @@ export class HomePage implements OnInit {
       this.dataService.previousPath = ['tabs/home/'];
       this.router.navigate(['tabs/esplora/recipe-detail']);
     });
+  }
+
+  onPull(event) {
+    event.target.getProgress().then(result => {
+      console.log('Pull index: ', result);
+    });
+  }
+
+  doRefresh(event) {
+    this.fetchRecipes();
+
+    setTimeout(() => {
+      console.log('Async reloading has ended');
+      event.target.complete();
+    }, 500);
   }
 
 }

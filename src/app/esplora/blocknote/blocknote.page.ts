@@ -19,15 +19,19 @@ export class BlocknotePage implements OnInit {
     this.myShoppingList = this.bnService.myShoppingList;
   }
 
+  ionViewWillLeave() {
+    this.bnService.storeOnLocalStorage();
+  }
+
   trackByIndex(index: number, obj: any): any {
     return index;
   }
 
-  addItem(){
+  addItem() {
     this.myShoppingList.push(new ShoppingListItem(false, ''));
   }
 
-  removeItem(selId) {
+  removeItem(selId: number) {
     this.myShoppingList.splice(selId, 1);
   }
 

@@ -9,6 +9,14 @@
 
 
 <ion-content>
+  <ion-refresher  slot="fixed"
+                  (ionPull)="onPull($event)" 
+                  (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pulling-icon = "null"
+      refreshingSpinner="crescent">
+    </ion-refresher-content>
+  </ion-refresher>
   <div id="spinner" *ngIf="isLoading">
     <ion-spinner name="crescent" color = "secondary"></ion-spinner>
   </div>
