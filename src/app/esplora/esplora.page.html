@@ -44,9 +44,6 @@
               <ion-img [src]="rec.imageUrl"></ion-img>
               <div class="onRightOfImage">
                 <p text-wrap>{{ rec.title.charAt(0).toUpperCase() + rec.title.slice(1)}}</p>
-                <ion-button (click)="onHeartClick(rec)" style="--background: transparent; --box-shadow: 0px;">
-                  <ion-icon slot="icon-only" color="primary" name="heart-empty"></ion-icon>
-                </ion-button>
               </div>
             </div>
           </ion-list>

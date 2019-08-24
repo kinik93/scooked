@@ -76,10 +76,4 @@ export class EsploraPage implements OnInit {
     }
   }
 
-  onHeartClick(rec) {
-    this.dataService.storeFavRecipes(rec).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
-    );
-  }
 }

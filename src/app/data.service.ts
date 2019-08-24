@@ -1,8 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap, map } from 'rxjs/operators';
+import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { Recipe } from './recipe';
 
+// key that is used to access the data in local storage
+const STORAGE_KEY = 'local_todolist';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +21,8 @@ export class DataService {
   previousPath: string [] = [];
   public detailRecipe: Recipe;
 
-  constructor(private http: HttpClient) {
+  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService, private http: HttpClient) {
+    var anotherTodolist = [];
     this.fetchIngredients().subscribe(tmp_ings => {
       for (var i = 0; i < tmp_ings.length; i++){
         tmp_ings[i] = tmp_ings[i].replace(/_/g, ' ');
@@ -26,6 +30,42 @@ export class DataService {
       }
       this.ingredientList = tmp_ings;
     });
+  }
+
+  public storeOnLocalStorage(recipe): void {
+
+          // get array of tasks from local storage
+          const currentTodoList = this.storage.get(STORAGE_KEY) || [];
+          // push new task to array
+          //const currentTodoList = []
+          currentTodoList.push(recipe);
+          // insert updated array to local storage
+          this.storage.set(STORAGE_KEY, currentTodoList);
+          console.log(this.storage.get(STORAGE_KEY) || 'LocaL storage is empty');
+  }
+
+  public removeFromLocalStorage(recipe){
+
+    var recLink = recipe.recipeLink;
+    const currentList = this.storage.get(STORAGE_KEY) || [];
+    var count = 0;
+    var found = false;
+    var index = 0;
+    while (!found && count<currentList.length){
+      if (currentList[count].recipeLink == recLink){
+        index = count;
+        found = true;
+      }
+      count++;
+    }
+    currentList.splice(index, 1);
+    this.storage.set(STORAGE_KEY, currentList);
+  }
+
+  public getFavFromStorage(){
+    // get array of tasks from local storage
+    const currentList = this.storage.get(STORAGE_KEY) || [];
+    return currentList;
   }
 
   fetchIngredients() {
