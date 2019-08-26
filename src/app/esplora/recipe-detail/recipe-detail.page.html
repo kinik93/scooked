@@ -13,26 +13,27 @@
   <div class="recipe-photo-wrapper" [ngStyle]="{'background-image': 'url('+selectedRecipe.imageUrl+')'}">
     <div class="recipe-photo-gradient">
       <h2>{{selectedRecipe.title.charAt(0).toUpperCase() + selectedRecipe.title.slice(1)}}</h2>
-      <ion-button (click)="onHeartClick()" style="--background: transparent; --box-shadow: 0px;">
+      <img src="assets/writing.png" (click)="onBlockNoteClick()" class="writing" />
+      <ion-button (click)="onHeartClick()" no-padding style="--background: transparent; --box-shadow: 0px;">
         <ion-icon *ngIf="isFavourite" slot="icon-only" color="primary" name="heart"></ion-icon>
         <ion-icon *ngIf="!isFavourite" slot="icon-only" color="primary" name="heart-empty"></ion-icon>
       </ion-button>
+
     </div>
   </div>
   <div class="recipe-content-wrapper">
       <p class="description">
           {{selectedRecipe.recipeDescription}}
       </p>
+      <div class="recipe-istruction-wrapper">
+        <p class="description prep" id="ingredients">Ingredienti</p>
 
-      <div style="padding-top: 2vh;">
-        <span class="description">Ingredienti</span>
-        <img src="assets/writing.png" (click)="onBlockNoteClick()" class="writing" />
       </div>
       <ul *ngFor="let ing of selectedRecipe.recipeIngredients">
-        <li> {{ing}} </li>
+        <li class="ingredient"> {{ing.toUpperCase()}} </li>
       </ul>
       <div class="recipe-istruction-wrapper">
-        <p class="description" id="prep">
+        <p class="description prep">
             Preparazione
         </p>
         <div id="inner-recipe-html" padding [innerHTML] = "selectedRecipe.recipeHTML">
