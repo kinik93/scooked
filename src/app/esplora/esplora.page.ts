@@ -53,6 +53,7 @@ export class EsploraPage implements OnInit {
       detailRecipe.recipeHTML = s;
       //console.log(detailRecipe.recipeHTML);
       this.dataService.detailRecipe = detailRecipe;
+      this.dataService.detailRecipe.recipeIngredients = selectedRecipe.recipeIngredients;
 
       this.dataService.previousPath = ['tabs/esplora/'];
       this.router.navigate(['tabs/esplora/recipe-detail']);

@@ -9,9 +9,13 @@ const STORAGE_KEY = 'blocknote_list';
 })
 export class BnService {
 
-  public myShoppingList: ShoppingListItem[];
+  public myShoppingList: ShoppingListItem[] = [];
 
   constructor(@Inject(LOCAL_STORAGE) private storage: StorageService) {
+
+  }
+
+  public loadLocalStorage() {
     this.myShoppingList = [];
     try {
       if (this.storage.get(STORAGE_KEY).length > 0) {

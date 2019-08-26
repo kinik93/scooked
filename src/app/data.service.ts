@@ -85,7 +85,8 @@ export class DataService {
       map(resData => {
         const recipes = [];
         for (const recipe of resData){
-          recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, "", ""));
+          var ingredients = recipe.Ingredients.split(',');
+          recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, ingredients, "", ""));
         }
         return recipes;
       })
@@ -100,7 +101,8 @@ export class DataService {
         map(resData => {
           const recipes = [];
           for (const recipe of resData){
-            recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, "", ""));
+            var ingredients = recipe.Ingredients.split(',');
+            recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, ingredients, "", ""));
           }
           return recipes;
         })
@@ -114,7 +116,8 @@ export class DataService {
         map(resData => {
           const recipes = [];
           for (const recipe of resData){
-            recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, "", ""));
+            var ingredients = recipe.Ingredients.split(',');
+            recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, ingredients,"", ""));
           }
           return recipes;
         })
@@ -129,7 +132,7 @@ export class DataService {
         map(resData => {
           const description = resData.Description;
           const html = resData.Html;
-          const selectedRec = new Recipe(recipe.title, recipe.imageUrl, recipe.recipeLink, description, html);
+          const selectedRec = new Recipe(recipe.title, recipe.imageUrl, recipe.recipeLink, recipe.Ingredients, description, html);
           return selectedRec;
         })
       );
@@ -188,5 +191,23 @@ export class DataService {
 
   getFavRecipes() {
     return this.http.get<any>('https://scooked-b3f5f.firebaseio.com/data.json');
+  }
+
+  storeRecipeNote(recIngredients: string[]) {
+    const ING_KEY = 'blocknote_list';
+    let currentIngList = [];
+    if (this.storage.get(ING_KEY) !== undefined) {
+      currentIngList = this.storage.get(ING_KEY);
+    }
+
+    for (const item of recIngredients) {
+      currentIngList.push({
+        isCheck: false,
+        text: item
+      });
+    }
+
+    this.storage.set(ING_KEY, currentIngList);
+
   }
 }

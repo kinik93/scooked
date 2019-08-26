@@ -23,6 +23,14 @@
       <p class="description">
           {{selectedRecipe.recipeDescription}}
       </p>
+
+      <div style="padding-top: 2vh;">
+        <span class="description">Ingredienti</span>
+        <img src="assets/writing.png" (click)="onBlockNoteClick()" class="writing" />
+      </div>
+      <ul *ngFor="let ing of selectedRecipe.recipeIngredients">
+        <li> {{ing}} </li>
+      </ul>
       <div class="recipe-istruction-wrapper">
         <p class="description" id="prep">
             Preparazione

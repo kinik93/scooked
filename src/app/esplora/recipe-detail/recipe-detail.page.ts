@@ -13,17 +13,20 @@ export class RecipeDetailPage implements OnInit {
   selectedRecipe: Recipe;
   isLoading = false;
   isFavourite = false;
-  constructor(private router: Router, private dataService: DataService) { }
+  constructor(private router: Router, private dataService: DataService) {
+  this.selectedRecipe = this.dataService.detailRecipe;}
 
-  ionViewWillEnter() {
 
+  ionViewWillEnter(){
+
+    this.isFavourite = false;
     this.selectedRecipe = this.dataService.detailRecipe;
     var favRecipes = this.dataService.getFavFromStorage();
-    console.log(favRecipes);
+    console.log(this.selectedRecipe);
     var count = 0;
-    this.isFavourite = false;
+
     while (!this.isFavourite && count<favRecipes.length){
-      if (favRecipes[count].recipeLink == this.selectedRecipe.recipeLink) {
+      if (favRecipes[count].recipeLink === this.selectedRecipe.recipeLink){
         this.isFavourite = true;
       }
       count++;
@@ -47,9 +50,14 @@ export class RecipeDetailPage implements OnInit {
     if (this.isFavourite){
       this.dataService.removeFromLocalStorage(this.selectedRecipe);
     }
-    else{
+    else {
       this.dataService.storeOnLocalStorage(this.selectedRecipe);
     }
     this.isFavourite = !(this.isFavourite);
+  }
+
+  onBlockNoteClick() {
+    this.dataService.storeRecipeNote(this.selectedRecipe.recipeIngredients);
+    this.router.navigate(['tabs/esplora/blocknote']);
   }
 }

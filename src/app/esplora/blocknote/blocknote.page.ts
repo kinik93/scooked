@@ -16,6 +16,10 @@ export class BlocknotePage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    this.bnService.loadLocalStorage();
     this.myShoppingList = this.bnService.myShoppingList;
   }
 

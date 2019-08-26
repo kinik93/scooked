@@ -98,8 +98,8 @@ div.recipe-photo-gradient ion-button{
 
 div.recipe-content-wrapper p.description{
   text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.2rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
   color: black;
   opacity: 0.7;
   display: block;
@@ -113,6 +113,8 @@ div.recipe-content-wrapper div.recipe-istruction-wrapper{
 }
 div.recipe-content-wrapper div.recipe-istruction-wrapper #prep{
   color: var(--ion-color-primary);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.2rem;
 }
 
 //Questi non li prende perchè html è iniettato?
@@ -129,3 +131,23 @@ div.recipe-istruction-wrapper div.inner-recipe-html p{
 div.recipe-istruction-wrapper div.inner-recipe-html p span.num-step{
   color: var(--ion-color-primary);
 }
+
+img.writing{
+  position: absolute;
+  right: 50vw;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+}
+
+div.recipe-content-wrapper span.description{
+  color: var(--ion-color-primary);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.7rem;
+  opacity: 0.7;
+  margin: auto;
+  max-width: 85%;
+  padding-left: 2vw;
+}
+
+
