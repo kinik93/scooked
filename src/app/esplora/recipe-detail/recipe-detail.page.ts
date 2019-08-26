@@ -15,14 +15,15 @@ export class RecipeDetailPage implements OnInit {
   isFavourite = false;
   constructor(private router: Router, private dataService: DataService) { }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
+
     this.selectedRecipe = this.dataService.detailRecipe;
     var favRecipes = this.dataService.getFavFromStorage();
     console.log(favRecipes);
     var count = 0;
     this.isFavourite = false;
     while (!this.isFavourite && count<favRecipes.length){
-      if (favRecipes[count].recipeLink == this.selectedRecipe.recipeLink){
+      if (favRecipes[count].recipeLink == this.selectedRecipe.recipeLink) {
         this.isFavourite = true;
       }
       count++;
