@@ -1,6 +1,8 @@
 # SCOOKED
 
-![alt screenshots](https://github.com/kinik93/Scooked/blob/master/Screenshots.gif)
+<p align="center"> 
+  <img src="https://github.com/kinik93/Scooked/blob/master/Screenshots.gif" alt="Screenshots">
+</p>
 
 ### Obiettivo dell'applicazione
 
@@ -22,9 +24,10 @@ Nello specifico l'applicazione propone all'utente un insieme di ricette contenen
 
 ##### Front-End side
 
-Il lato Front-End dell'applicazione è stato sviluppato mediante l'utilizzo del framework *ionic* assieme a
+Il lato Front-End dell'applicazione è stato sviluppato mediante l'utilizzo del toolkit open-source [Ionic](https://ionicframework.com/) integrato assieme al framework [Angular](https://angular.io/).
 
 ##### Back-End side
+Il Back-End dell'applicazione, responsabile di ..., è stato realizzato attraverso ...
 
 ### Requisiti
 
@@ -32,5 +35,6 @@ Il lato Front-End dell'applicazione è stato sviluppato mediante l'utilizzo del 
 |---|---|
 | Node.js | > 10.9.0 |
 | Angular  |  8 |
+| Ionic | 4.12 |
 
 ### Licenza
