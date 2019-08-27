@@ -68,12 +68,12 @@ div.recipe-photo-gradient{
   background: rgba(238,238,238,0);
   position: relative;
   background: rgba(118,41,41,0.2);
-background: -moz-linear-gradient(top, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(237,237,237,0.42) 60%, rgba(237,237,237,1) 86%, rgba(237,237,237,1) 87%);
-background: -webkit-gradient(left top, left bottom, color-stop(12%, rgba(118,41,41,0.2)), color-stop(20%, rgba(138,74,74,0.2)), color-stop(41%, rgba(190,159,159,0)), color-stop(60%, rgba(237,237,237,0.42)), color-stop(86%, rgba(237,237,237,1)), color-stop(87%, rgba(237,237,237,1)));
-background: -webkit-linear-gradient(top, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(237,237,237,0.42) 60%, rgba(237,237,237,1) 86%, rgba(237,237,237,1) 87%);
-background: -o-linear-gradient(top, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(237,237,237,0.42) 60%, rgba(237,237,237,1) 86%, rgba(237,237,237,1) 87%);
-background: -ms-linear-gradient(top, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(237,237,237,0.42) 60%, rgba(237,237,237,1) 86%, rgba(237,237,237,1) 87%);
-background: linear-gradient(to bottom, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(237,237,237,0.42) 60%, rgba(237,237,237,1) 86%, rgba(237,237,237,1) 87%);
+background: -moz-linear-gradient(top, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(245,245,245,0.42) 60%, rgba(245,245,245,1) 86%, rgba(245,245,245,1) 87%);
+background: -webkit-gradient(left top, left bottom, color-stop(12%, rgba(118,41,41,0.2)), color-stop(20%, rgba(138,74,74,0.2)), color-stop(41%, rgba(190,159,159,0)), color-stop(60%, rgba(245,245,245,0.42)), color-stop(86%, rgba(245,245,245,1)), color-stop(87%, rgba(245,245,245,1)));
+background: -webkit-linear-gradient(top, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(245,245,245,0.42) 60%, rgba(245,245,245,1) 86%, rgba(245,245,245,1) 87%);
+background: -o-linear-gradient(top, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(245,245,245,0.42) 60%, rgba(245,245,245,1) 86%, rgba(245,245,245,1) 87%);
+background: -ms-linear-gradient(top, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(245,245,245,0.42) 60%, rgba(245,245,245,1) 86%, rgba(245,245,245,1) 87%);
+background: linear-gradient(to bottom, rgba(118,41,41,0.2) 12%, rgba(138,74,74,0.2) 20%, rgba(190,159,159,0) 41%, rgba(245,245,245,0.42) 60%, rgba(245,245,245,1) 86%, rgba(245,245,245,1) 87%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#762929', endColorstr='#ededed', GradientType=0 );
 
 }
@@ -83,9 +83,10 @@ div.recipe-photo-gradient h2{
   color: var(--ion-color-primary);
   display: block;
   position: absolute;
-  bottom: 5%;
+  bottom: 0%;
   left: 5%;
   width: 70%;
+  margin-bottom: 0;
 }
 
 div.recipe-photo-gradient ion-button{

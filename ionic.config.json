@@ -1,7 +1,8 @@
 {
   "name": "Scooked",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
