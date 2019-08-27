@@ -40,3 +40,8 @@ Il Back-End dell'applicazione, responsabile di ..., è stato realizzato attraver
 ### Licenza e condizioni d'uso
 
 L'applicazione utilizza contenuti provenienti dal sito internet [Giallo Zafferano](https://www.giallozafferano.it/) ed è realizzata esclusivamente a scopo didattico. Essendo i contenuti di giallo zafferano non apertamente disponibili, si declina la responsabilità per eventuali utilizzi da parte di terzi a fini illeciti.
+
+### Autori
+
+* Niccolò Bellaccini, nicco.b.93@gmail.com, https://github.com/kinik93
+* Tommaso Aldinucci, tommaso.aldinucci@icloud.com, https://github.com/tom1092
