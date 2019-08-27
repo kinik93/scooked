@@ -39,4 +39,10 @@ export class BlocknotePage implements OnInit {
     this.myShoppingList.splice(selId, 1);
   }
 
+  clearList() {
+    this.myShoppingList = [];
+    this.bnService.myShoppingList = this.myShoppingList;
+    this.bnService.storeOnLocalStorage();
+  }
+
 }
