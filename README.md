@@ -37,4 +37,6 @@ Il Back-End dell'applicazione, responsabile di ..., è stato realizzato attraver
 | Angular  |  8 |
 | Ionic | 4.12 |
 
-### Licenza
+### Licenza e condizioni d'uso
+
+L'applicazione utilizza contenuti provenienti dal sito internet [Giallo Zafferano](https://www.giallozafferano.it/) ed è realizzata esclusivamente a scopo didattico. Essendo i contenuti di giallo zafferano non apertamente disponibili, si declina la responsabilità per eventuali utilizzi da parte di terzi a fini illeciti.
