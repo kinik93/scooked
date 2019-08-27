@@ -102,6 +102,7 @@ export class DataService {
           const recipes = [];
           for (const recipe of resData){
             var ingredients = recipe.Ingredients.split(',');
+            //console.log(ingredients);
             recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, ingredients, "", ""));
           }
           return recipes;
@@ -132,7 +133,8 @@ export class DataService {
         map(resData => {
           const description = resData.Description;
           const html = resData.Html;
-          const selectedRec = new Recipe(recipe.title, recipe.imageUrl, recipe.recipeLink, recipe.Ingredients, description, html);
+          var selectedRec = new Recipe(recipe.title, recipe.imageUrl, recipe.recipeLink, recipe.recipeIngredients, description, html);
+          //console.log(selectedRec);
           return selectedRec;
         })
       );

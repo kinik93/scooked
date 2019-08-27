@@ -15,7 +15,6 @@ export class HomePage implements OnInit {
   suggestedRecipes: Recipe[] = [];
   isLoading = false;
 
-  favoutireRecipes: Recipe[] = [];
 
   constructor(private router: Router, private dataService: DataService) {}
 
@@ -28,11 +27,14 @@ export class HomePage implements OnInit {
 
     this.dataService.fetchRandomRecipes(this.rndIng1).subscribe(rand_recipes => {
       this.randomRecipes = rand_recipes;
+      //console.log(this.randomRecipes);
     });
     this.dataService.fetchSuggestedRecipes().subscribe(suggested_recipes => {
       this.suggestedRecipes = suggested_recipes;
+      console.log(this.suggestedRecipes);
     });
     this.isLoading = false;
+
   }
 
   ngOnInit() {
