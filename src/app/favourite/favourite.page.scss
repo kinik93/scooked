@@ -23,7 +23,7 @@ div.content-header-wrapper div.content-logo-wrapper{
 
 div.content-header-wrapper div.content-logo-wrapper img{
 
-  height: 35px;
+  height: 40px;
   padding-top: 4px;
   padding-bottom: 4px;
   display: block;
@@ -104,9 +104,10 @@ div.recipeItem div.onRightOfImage{
 }
 
 div.recipeItem div.onRightOfImage p{
-  font-family: 'Josefin Sans', sans-serif;
+
   color: var(--ion-color-primary);
-  font-size: 1rem;
+  font-size: 0.7em;
+  font-family: 'Josefin Sans', sans-serif;
   display: block;
   height: 20vw;
   padding-top: 4vw;

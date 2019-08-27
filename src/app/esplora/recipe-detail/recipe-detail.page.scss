@@ -29,7 +29,7 @@ div.content-header-wrapper div.content-logo-wrapper{
 div.content-header-wrapper div.content-logo-wrapper img.logo{
 
   margin: 0 auto;
-  height: 35px;
+  height: 40px;
   padding-top: 4px;
   padding-bottom: 4px;
   display: block;
@@ -38,7 +38,7 @@ div.content-header-wrapper div.content-logo-wrapper img.logo{
 }
 
 div.content-header-wrapper div.content-logo-wrapper div.back-icon{
-  height: 35px;
+  height: 100%;
   vertical-align: middle;
   padding-top: 13px;
   padding-left: 4vh;
@@ -46,9 +46,10 @@ div.content-header-wrapper div.content-logo-wrapper div.back-icon{
   display: table-cell;
 }
 div.content-header-wrapper div.content-logo-wrapper div.back-icon img{
-  height: 16px;
-  width: 16px;
+  height: 18px;
+  width: 18px;
   display: inline-block;
+  //padding-bottom: 3px;
 }
 
 

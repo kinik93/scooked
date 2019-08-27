@@ -14,7 +14,7 @@
         <div class="recipeItem" *ngFor="let rec of favRecipes" (click) = "onRecipeClick(rec)" id="content">
           <ion-img [src]="rec.imageUrl"></ion-img>
           <div class="onRightOfImage">
-            <p text-wrap>{{ rec.title.charAt(0).toUpperCase() + rec.title.slice(1)}}</p>
+            <p text-wrap>{{ rec.title | uppercase }}</p>
           </div>
         </div>
       </ion-list>

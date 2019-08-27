@@ -117,6 +117,7 @@ export class DataService {
         map(resData => {
           const recipes = [];
           for (const recipe of resData){
+            
             var ingredients = recipe.Ingredients.split(',');
             recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, ingredients,"", ""));
           }
