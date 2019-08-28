@@ -30,6 +30,7 @@ export class EsploraPage implements OnInit {
   ionViewWillEnter(){
     if(this.currentIngredients.length > 0)
     {
+        this.dataService.currentRecipes = [];
         this.from = 0;
         this.to = 20;
         this.isLoadingRecipe  = true;
