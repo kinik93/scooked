@@ -6,6 +6,6 @@ export class Recipe {
       public recipeIngredients: string[],
       public recipeDescription: string,
       public recipeHTML: string,
-      public recipePriority: int
+      public recipePriority: number
     ){}
 }
