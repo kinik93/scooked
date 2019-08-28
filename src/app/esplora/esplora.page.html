@@ -20,6 +20,12 @@
         <p>Aggiungi un ingrediente</p>
         <img src="assets/plus-symbol.png"/>
       </div>
+      <div class="toggle">
+        <ion-item>
+          <ion-toggle color="primary" [(ngModel)]="toggleRecipes" checked > </ion-toggle>
+          <ion-label padding>Usa tutti gli ingredienti</ion-label>
+        </ion-item>
+      </div>
       <ion-grid padding>
         <ion-row *ngIf="currentIngredients.length > 0" class="first_block">
           I tuoi ingredienti
@@ -40,14 +46,21 @@
         </div>
         <ion-row class="row-proposed">
           <ion-list *ngIf="currentIngredients.length > 0 && isLoadingRecipe == false">
-            <div class="recipeItem" *ngFor="let rec of currentRecipes" (click) = "onRecipeClick(rec)" id="content">
-              <ion-img [src]="rec.imageUrl"></ion-img>
-              <div class="onRightOfImage">
-                <p text-wrap>{{ rec.title.toUpperCase() }}</p>
+            <div *ngFor="let rec of recipeList">
+              <div class="recipeItem"  *ngIf="(rec.recipePriority == 0 && toggleRecipes) || (!toggleRecipes)"(click) = "onRecipeClick(rec)" id="content" >
+                <ion-img [src]="rec.imageUrl"></ion-img>
+                <div class="onRightOfImage">
+                  <p text-wrap>{{ rec.title.toUpperCase() }}</p>
+                </div>
               </div>
             </div>
           </ion-list>
         </ion-row>
+        <ion-infinite-scroll threshold="200px" (ionInfinite)="updateFromTo($event)">
+          <ion-infinite-scroll-content
+            loadingSpinner="crescent" color="primary">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
       </ion-grid>
     </div>
   </div>

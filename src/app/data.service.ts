@@ -20,6 +20,7 @@ export class DataService {
   requestRecipeUrl = ''; // url sent to server
   previousPath: string [] = [];
   public detailRecipe: Recipe;
+  currentRecipes: Recipe[] = [];
 
   constructor(@Inject(LOCAL_STORAGE) private storage: StorageService, private http: HttpClient) {
     var anotherTodolist = [];
@@ -78,17 +79,17 @@ export class DataService {
       );
   }
 
-  fetchRecipes() {
+  fetchRecipes(from, to) {
+    var url = this.requestRecipeUrl + '&range='+String(from)+'%23'+String(to)+'';
     return this.http
-    .get<any>(this.requestRecipeUrl)
+    .get<any>(url)
     .pipe(
       map(resData => {
-        const recipes = [];
         for (const recipe of resData){
           var ingredients = recipe.Ingredients.split(',');
-          recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, ingredients, "", ""));
+          this.currentRecipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, ingredients, "", "", recipe.Priority));
         }
-        return recipes;
+        return this.currentRecipes;
       })
     );
   }
@@ -103,7 +104,7 @@ export class DataService {
           for (const recipe of resData){
             var ingredients = recipe.Ingredients.split(',');
             //console.log(ingredients);
-            recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, ingredients, "", ""));
+            recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, ingredients, "", "", 0));
           }
           return recipes;
         })
@@ -117,9 +118,9 @@ export class DataService {
         map(resData => {
           const recipes = [];
           for (const recipe of resData){
-            
+
             var ingredients = recipe.Ingredients.split(',');
-            recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, ingredients,"", ""));
+            recipes.push(new Recipe(recipe.RecipeTitle, recipe.ImgLink, recipe.RecipeLink, ingredients,"", "", 0));
           }
           return recipes;
         })
@@ -134,7 +135,7 @@ export class DataService {
         map(resData => {
           const description = resData.Description;
           const html = resData.Html;
-          var selectedRec = new Recipe(recipe.title, recipe.imageUrl, recipe.recipeLink, recipe.recipeIngredients, description, html);
+          var selectedRec = new Recipe(recipe.title, recipe.imageUrl, recipe.recipeLink, recipe.recipeIngredients, description, html, recipe.recipePriority);
           //console.log(selectedRec);
           return selectedRec;
         })
@@ -157,8 +158,9 @@ export class DataService {
     if(!this.searchIng(searchedIng)){
       this.currentIngredients.push(searchedIng);
       this.recipeUrl = this.recipeUrl + this.normalizeIngredient(searchedIng) + '%23';
-      this.requestRecipeUrl = this.recipeUrl.slice(0, -3) + '&range=0%2320';
+      this.requestRecipeUrl = this.recipeUrl.slice(0, -3);
     }
+    this.currentRecipes = [];
   }
 
   normalizeIngredient(searchedIng){
@@ -181,10 +183,10 @@ export class DataService {
     for (var i = 0; i < this.currentIngredients.length; i++) {
       this.recipeUrl = this.recipeUrl + this.normalizeIngredient(this.currentIngredients[i]) + '%23';
     }
-    this.requestRecipeUrl = this.recipeUrl.slice(0, -3) + '&range=0%2320';
+    this.requestRecipeUrl = this.recipeUrl.slice(0, -3);
     // console.log(this.recipeUrl);
-    // console.log(this.requestRecipeUrl);
-
+    console.log(this.requestRecipeUrl);
+    this.currentRecipes = [];
     return this.currentIngredients;
   }
 

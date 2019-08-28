@@ -14,7 +14,10 @@ export class EsploraPage implements OnInit {
   isLoading = false;
   isLoadingRecipe = false;
   currentIngredients: string[];
-  currentRecipes: Recipe[];
+  toggleRecipes = true;
+  from = 0;
+  to = 20;
+  recipeList : Recipe [] = [];
   //ci metto il mio
 
   constructor(private router: Router, private dataService: DataService) {
@@ -27,15 +30,31 @@ export class EsploraPage implements OnInit {
   ionViewWillEnter(){
     if(this.currentIngredients.length > 0)
     {
+        this.from = 0;
+        this.to = 20;
         this.isLoadingRecipe  = true;
-        this.dataService.fetchRecipes().subscribe(filteredRecipes => {
-        this.currentRecipes = filteredRecipes;
+        this.dataService.fetchRecipes(this.from, this.to).subscribe(filteredRecipes => {
+        this.recipeList = filteredRecipes;
         this.normalizeRecipes();
         this.isLoadingRecipe  = false;
       });
     }
   }
+  updateFromTo(event){
+    console.log("updated");
+    if(this.currentIngredients.length > 0)
+    {
+      this.from = this.from + 20;
+      this.to = this.to + 20;
+      this.dataService.fetchRecipes(this.from, this.to).subscribe(filteredRecipes => {
+      this.recipeList = filteredRecipes;
+      this.normalizeRecipes();
+      this.isLoadingRecipe  = false;
+      event.target.complete();
+      });
+    }
 
+  }
   goToNote(){
     this.router.navigate(['tabs/esplora/blocknote']);
   }
@@ -63,17 +82,19 @@ export class EsploraPage implements OnInit {
 
   removeCurrentIngredient(ing: string) {
     this.currentIngredients = this.dataService.removeIngredient(ing);
+    this.from = 0;
+    this.to = 20;
     if(this.currentIngredients.length > 0){
-      this.dataService.fetchRecipes().subscribe(filteredRecipes => {
-        this.currentRecipes = filteredRecipes;
+      this.dataService.fetchRecipes(this.from, this.to).subscribe(filteredRecipes => {
+        this.recipeList = filteredRecipes;
         this.normalizeRecipes();
       });
     }
   }
 
   normalizeRecipes(){
-    for (var i=0; i < this.currentRecipes.length; i++){
-      this.currentRecipes[i].title = this.currentRecipes[i].title.charAt(0).toUpperCase() + this.currentRecipes[i].title.slice(1);
+    for (var i=0; i < this.recipeList.length; i++){
+      this.recipeList[i].title = this.recipeList[i].title.charAt(0).toUpperCase() + this.recipeList[i].title.slice(1);
     }
   }
 

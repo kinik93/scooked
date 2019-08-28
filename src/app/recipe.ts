@@ -5,6 +5,7 @@ export class Recipe {
       public recipeLink: string,
       public recipeIngredients: string[],
       public recipeDescription: string,
-      public recipeHTML: string
+      public recipeHTML: string,
+      public recipePriority: int
     ){}
 }
