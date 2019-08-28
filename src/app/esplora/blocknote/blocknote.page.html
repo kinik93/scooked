@@ -12,7 +12,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item-sliding *ngFor="let item of myShoppingList; let i = index; trackBy:trackByIdx">
+    <ion-item-sliding *ngFor="let item of myShoppingList; let i = index; trackBy:trackByIndex">
       <ion-item>
         <ion-checkbox 
           [(ngModel)]="myShoppingList[i].isCheck" 
