@@ -12,7 +12,6 @@ export class SearchingPage implements OnInit {
   @ViewChild('input') searchInput: {setFocus: () => void; };
   ingredients: string[];
   filteredIngredients: string[] = [];
-  isLoadIng = false;
   isFiltering = false;
   currentInputValue = '';
 
@@ -21,7 +20,7 @@ export class SearchingPage implements OnInit {
   ngOnInit() {
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.searchInput.setFocus();
   }
 
@@ -33,7 +32,7 @@ export class SearchingPage implements OnInit {
     this.isFiltering = false;
   }
 
-  onIngClick(selectedIng: string){
+  onIngClick(selectedIng: string) {
     this.dataService.addIngredient(selectedIng);
     this.router.navigate(['/tabs/esplora']);
   }

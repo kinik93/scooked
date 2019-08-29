@@ -18,15 +18,14 @@
 </ion-header>
 
 <ion-content>
-    <div padding-top text-center *ngIf="isLoadIng">
-      <ion-spinner></ion-spinner>
-    </div>
     <div padding-top text-center *ngIf="isFiltering">
       <ion-spinner></ion-spinner>
     </div>
     <div *ngIf="filteredIngredients.length > 0 && isFiltering == false;">
-      <ion-list  *ngFor="let ing of filteredIngredients">
-        <ion-item (click)="onIngClick(ing)">{{ ing }}</ion-item>
-      </ion-list>
+      <ul>
+        <li *ngFor="let ing of filteredIngredients">
+          <p (click)="onIngClick(ing)">{{ing}}</p>
+        </li>
+      </ul>
     </div>
 </ion-content>

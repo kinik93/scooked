@@ -4,3 +4,19 @@
     margin-top: 5px;
     font-family: "Montserrat", "Proxima Nova", Arial,sans-serif;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0 2vw 0 1vw;
+}
+
+li {
+    color: #191919;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1em;
+    border-bottom: 1px solid #8c8c8c;
+}
+
+li p{
+    padding-left: 1vw;
+}

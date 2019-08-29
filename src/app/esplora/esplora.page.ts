@@ -18,7 +18,6 @@ export class EsploraPage implements OnInit {
   from = 0;
   to = 20;
   recipeList : Recipe [] = [];
-  //ci metto il mio
 
   constructor(private router: Router, private dataService: DataService) {
   }
@@ -28,7 +27,7 @@ export class EsploraPage implements OnInit {
   }
 
   ionViewWillEnter(){
-    if(this.currentIngredients.length > 0)
+    if (this.currentIngredients.length > 0)
     {
         this.dataService.currentRecipes = [];
         this.from = 0;
