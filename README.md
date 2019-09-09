@@ -26,9 +26,6 @@ Nello specifico l'applicazione propone all'utente un insieme di ricette contenen
 
 Il lato Front-End dell'applicazione è stato sviluppato mediante l'utilizzo del toolkit open-source [Ionic](https://ionicframework.com/) integrato assieme al framework [Angular](https://angular.io/).
 
-##### Back-End side
-Il Back-End dell'applicazione, responsabile di ..., è stato realizzato attraverso ...
-
 ### Requisiti
 
 | Package  |  Version | 
